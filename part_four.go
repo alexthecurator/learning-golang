@@ -6,6 +6,7 @@ import (
 )
 
 func part_four() {
+	// Todo: Convert to terminal user input
 	sqrt := arithmetics("^", 64)
 	sum := arithmetics("+", 3, 9, 10)
 	minus := arithmetics("-", 1, 98, 100)
@@ -23,6 +24,7 @@ func arithmetics(oper string, values ...float64) float64 {
 			result = 1
 		}
 
+		// Todo: Initialise Arithmetic Error handling eg: division by zero etc..
 		for _, n := range values {
 			switch oper {
 			case "+":
@@ -32,6 +34,7 @@ func arithmetics(oper string, values ...float64) float64 {
 			case "*":
 				result *= n
 			case "/":
+
 				result = n / result
 			}
 
@@ -41,6 +44,8 @@ func arithmetics(oper string, values ...float64) float64 {
 	} else {
 		result = math.Sqrt(values[0])
 	}
+
+	// Todo: Add more operations
 
 	return result
 }
