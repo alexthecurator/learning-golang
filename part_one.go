@@ -8,6 +8,6 @@ import (
 )
 
 func part_one() {
-	emoji.Println("\nCheers to learning Golang :beer:")
-	fmt.Println("Data types: ", reflect.TypeOf(102), reflect.TypeOf("..."), reflect.TypeOf(3.1423), reflect.TypeOf(false))
+	emoji.Println("Cheers to learning Golang :beer:")
+	fmt.Println("Data types:", reflect.TypeOf(102), reflect.TypeOf("..."), reflect.TypeOf(3.1423), reflect.TypeOf(false))
 }
