@@ -6,16 +6,16 @@ import (
 )
 
 func part_four() {
-	sqrt := operations("^", 64)
-	sum := operations("+", 3, 9, 10)
-	minus := operations("-", 1, 98, 100)
-	divide := operations("/", 2, 12)
-	multiply := operations("*", 12, 12)
+	sqrt := arithmetics("^", 64)
+	sum := arithmetics("+", 3, 9, 10)
+	minus := arithmetics("-", 1, 98, 100)
+	divide := arithmetics("/", 2, 12)
+	multiply := arithmetics("*", 12, 12)
 
 	fmt.Println("Sum:", sum, "| Minus:", minus, "| Multiply:", multiply, "| Divide:", divide, "| Sqrt:", sqrt)
 }
 
-func operations(oper string, values ...float64) float64 {
+func arithmetics(oper string, values ...float64) float64 {
 	var result float64 = 0
 	if oper != "^" {
 		switch oper {
