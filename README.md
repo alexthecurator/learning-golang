@@ -26,3 +26,8 @@ Then `cd learning-golang`
 
 Finally execute `go run .`
 
+
+## Documentation
+
+[You can visit the docs for further reference](https://go.dev/doc/)
+
