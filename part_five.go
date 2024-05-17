@@ -46,5 +46,4 @@ func part_five() {
 	}
 
 	fmt.Println("\nResult:", ans)
-
 }
