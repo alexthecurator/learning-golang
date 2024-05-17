@@ -10,8 +10,8 @@ import (
 )
 
 func part_five() {
-	fmt.Print("*** CALCULATOR ***")
-	fmt.Print("\n\nEnter your values with operations Eg: (1 + 2 - 3 * 4 / 5 ...): \n")
+	fmt.Print("*** Calculator ***")
+	fmt.Print("\n\nEnter values below Eg: (1 + 2 - 3 * 4 / 5 ...): \n")
 
 	reader := bufio.NewScanner(os.Stdin)
 
