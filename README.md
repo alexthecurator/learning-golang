@@ -1,3 +1,5 @@
+![Latest snippet](https://wallpaperaccess.com/full/4482740.jpg)
+
 # Learning Golang
 
 As a software engineer with a background in Python, I created this collection of resources specifically to help fellow engineers leverage the clarity of Python and add the power of JavaScript-like concurrency features to their coding arsenal.
@@ -30,4 +32,4 @@ Finally execute `go run .`
 
 ## Snippet
 
-![Latest snippet](https://wallpaperaccess.com/full/4482740.jpg)
+![Latest snippet](https://raw.githubusercontent.com/alexthecurator/learning-golang/main/go-arithmetic-processor.png)
