@@ -11,8 +11,25 @@ import (
 )
 
 func part_five() {
-	fmt.Println("[ Go arithmetics 🧮 ] Ref this Eg: 1 + 2 - 3 * 4 / 5 | log n | ans + n etc..")
-	fmt.Print("\n\nYour values (use ctrl + c to close): ")
+	fmt.Println(`
+** Go Arithmetics **
+
+Supported operations
+--------------------+
+1. Addition: +
+2. Substraction: -
+3. Multiplication: *
+4. Division: /
+5. Exponents: **
+6. Log: log
+
+Usage: 
+-------+
+$: 1 + 2 - 3 * 4 / 5 
+$: log n + n 
+$: ans + n`)
+
+	fmt.Print("\nYour values (use ctrl + c to close): ")
 
 	reader := bufio.NewScanner(os.Stdin)
 	var ans float64 = 0.0
