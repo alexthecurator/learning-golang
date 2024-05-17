@@ -27,6 +27,8 @@ func part_five() {
 		for i, value := range values {
 			if oper.MatchString(value) {
 
+				// If answer is after operation
+				// Assign the b to the previous answer or the next float value
 				switch values[i+1] {
 				case "ans":
 					b = ans
@@ -40,6 +42,8 @@ func part_five() {
 
 				// Initial
 				if i == 1 {
+					// If answer is before operation
+					// Assign the a to the previous answer or the first float value
 					switch values[i-1] {
 					case "ans":
 						ans = arithmetics(value, b, ans)
