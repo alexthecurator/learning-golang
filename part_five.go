@@ -16,6 +16,8 @@ func part_five() {
 
 	reader := bufio.NewScanner(os.Stdin)
 	var ans float64 = 0.0
+	var a float64 = 0.0
+	var b float64 = 0.0
 
 	for reader.Scan() {
 		values := strings.Split(reader.Text(), " ")
@@ -25,24 +27,29 @@ func part_five() {
 		for i, value := range values {
 			if oper.MatchString(value) {
 
-				b := str_to_float(values[i+1])
+				switch values[i+1] {
+				case "ans":
+					b = ans
+				default:
+					b = str_to_float(values[i+1])
+				}
 
 				if i == 0 {
 					ans = arithmetics(value, b)
 				}
 
-				// Then
+				// Initial
 				if i == 1 {
 					switch values[i-1] {
 					case "ans":
 						ans = arithmetics(value, b, ans)
 					default:
-						a := str_to_float(values[i-1])
+						a = str_to_float(values[i-1])
 						ans = arithmetics(value, b, a)
 					}
 				}
 
-				// After
+				// Then
 				if i > 2 {
 					ans = arithmetics(value, b, ans)
 				}
