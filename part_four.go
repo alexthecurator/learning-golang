@@ -27,6 +27,7 @@ func arithmetics(oper string, values ...float64) float64 {
 		}
 
 		for _, n := range values {
+
 			switch oper {
 			case "+":
 				result += n
@@ -36,7 +37,7 @@ func arithmetics(oper string, values ...float64) float64 {
 				result *= n
 			case "/":
 				if n == 0 {
-					err := errors.New(": Division by zero, is not allowed")
+					err := errors.New(": Cannot divide by zero")
 					log.Fatal(err)
 					return 0
 				}

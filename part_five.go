@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"regexp"
 	"strconv"
@@ -10,8 +11,7 @@ import (
 )
 
 func part_five() {
-	fmt.Print("*** Calculator ***")
-	fmt.Print("\n\nEnter values below Eg: (1 + 2 - 3 * 4 / 5 ...): \n")
+	fmt.Print("[ Your Go Calculator 🧮 ] \nEnter values below Eg: 1 + 2 - 3 * 4 / 5 etc.. :\n")
 
 	reader := bufio.NewScanner(os.Stdin)
 
@@ -22,20 +22,29 @@ func part_five() {
 
 	oper, _ := regexp.Compile(`[+\-*/]`)
 
-	for i, text := range values {
-		match := oper.MatchString(text)
+	for i, value := range values {
+		if oper.MatchString(value) {
+			b, err := strconv.ParseFloat(values[i+1], 64)
+			if err != nil {
+				log.Fatal(err.Error())
+			}
 
-		if match {
-			b, _ := strconv.ParseFloat(values[i+1], 64)
-			ans = arithmetics(text, ans, b)
+			// Initially
+			if i == 1 {
+				a, err := strconv.ParseFloat(values[i-1], 64)
+				if err != nil {
+					log.Fatal(err.Error())
+				}
+				ans = arithmetics(value, b, a)
+			}
 
-			if i <= 2 {
-				a, _ := strconv.ParseFloat(values[i-1], 64)
-				ans = arithmetics(text, a, b)
+			// After
+			if i > 2 {
+				ans = arithmetics(value, b, ans)
 			}
 		}
 	}
 
-	fmt.Print("\nResult: ", ans)
+	fmt.Println("\nResult:", ans)
 
 }
