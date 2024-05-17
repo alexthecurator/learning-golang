@@ -11,7 +11,7 @@ import (
 )
 
 func part_five() {
-	fmt.Println("[ Go Calculator 🧮 ] Ref this Eg: 1 + 2 - 3 * 4 / 5 | log n | ans + n etc..")
+	fmt.Println("[ Go arithmetics 🧮 ] Ref this Eg: 1 + 2 - 3 * 4 / 5 | log n | ans + n etc..")
 	fmt.Print("\n\nYour values (use ctrl + c to close): ")
 
 	reader := bufio.NewScanner(os.Stdin)
