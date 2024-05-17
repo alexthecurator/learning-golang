@@ -20,33 +20,33 @@ func part_four() {
 
 func arithmetics(oper string, values ...float64) float64 {
 	var result float64 = 0
-	if oper != "^" {
+
+	switch oper {
+	case "*", "/", "**":
+		result = 1
+	}
+
+	for _, n := range values {
 		switch oper {
-		case "*", "/":
-			result = 1
-		}
-
-		for _, n := range values {
-
-			switch oper {
-			case "+":
-				result += n
-			case "-":
-				result = n - result
-			case "*":
-				result *= n
-			case "/":
-				if n == 0 {
-					err := errors.New(": Cannot divide by zero")
-					log.Fatal(err)
-					return 0
-				}
-				result = n / result
+		case "+":
+			result += n
+		case "-":
+			result = n - result
+		case "*":
+			result *= n
+		case "/":
+			if n == 0 {
+				err := errors.New(": Cannot divide by zero")
+				log.Fatal(err)
+				return 0
 			}
+			result = n / result
+		case "**":
+			result = math.Pow(n, result)
+		case "log":
+			result = math.Log(n)
 		}
 
-	} else {
-		result = math.Sqrt(values[0])
 	}
 
 	return result

@@ -20,18 +20,23 @@ func part_five() {
 
 	var ans float64 = 0.0
 
-	oper, _ := regexp.Compile(`[+\-*/]`)
+	oper, _ := regexp.Compile(`[+\-*/log]`)
 
 	for i, value := range values {
 		if oper.MatchString(value) {
-			b, err := strconv.ParseFloat(values[i+1], 64)
+			b, err := strconv.ParseFloat(values[i+1], 64) // type casting to float base 64
 			if err != nil {
 				log.Fatal(err.Error())
 			}
 
-			// Initially
+			// Initial
+			if i == 0 {
+				ans = arithmetics(value, b)
+			}
+
+			// Then
 			if i == 1 {
-				a, err := strconv.ParseFloat(values[i-1], 64)
+				a, err := strconv.ParseFloat(values[i-1], 64) // type casting to float base 64
 				if err != nil {
 					log.Fatal(err.Error())
 				}
