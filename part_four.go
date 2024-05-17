@@ -1,7 +1,9 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"log"
 	"math"
 )
 
@@ -10,7 +12,7 @@ func part_four() {
 	sqrt := arithmetics("^", 64)
 	sum := arithmetics("+", 3, 9, 10)
 	minus := arithmetics("-", 1, 98, 100)
-	divide := arithmetics("/", 2, 12)
+	divide := arithmetics("/", 0, 12)
 	multiply := arithmetics("*", 12, 12)
 
 	fmt.Println("Sum:", sum, "| Minus:", minus, "| Multiply:", multiply, "| Divide:", divide, "| Sqrt:", sqrt)
@@ -24,7 +26,6 @@ func arithmetics(oper string, values ...float64) float64 {
 			result = 1
 		}
 
-		// Todo: Initialise Arithmetic Error handling eg: division by zero etc..
 		for _, n := range values {
 			switch oper {
 			case "+":
@@ -34,18 +35,18 @@ func arithmetics(oper string, values ...float64) float64 {
 			case "*":
 				result *= n
 			case "/":
-
+				if n == 0 {
+					err := errors.New(": Division by zero, is not allowed")
+					log.Fatal(err)
+					return 0
+				}
 				result = n / result
 			}
-
 		}
 
-		return result
 	} else {
 		result = math.Sqrt(values[0])
 	}
-
-	// Todo: Add more operations
 
 	return result
 }
