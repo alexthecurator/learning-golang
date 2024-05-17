@@ -32,4 +32,4 @@ Finally execute `go run .`
 
 ## Snippet
 
-![Latest snippet](https://raw.githubusercontent.com/alexthecurator/learning-golang/main/go-arithmetic-processor.png)
+![Latest snippet](https://raw.githubusercontent.com/alexthecurator/learning-golang/main/snippets/go-arithmetic-processor.png)
